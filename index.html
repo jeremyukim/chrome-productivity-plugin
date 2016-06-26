@@ -18,15 +18,15 @@
     <div class="container">
       <div class="row">
         <div class="col-sm-12">
-          <!-- Will change name to variable set by user soon! -->
           <div class="vertCenter">
             <div class="">
               <p class="currentHour text-center"></p>
-              <form action="" onSubmit="return false;">
-                <p class="greeting"> Hey there, <input id="userName" class="nameField" type="text" placeholder="your name" onkeydown="setName(this)"></p>
+              <form action="" onSubmit="return false;" autocomplete="off">
+                <p class="greeting text-center"> Hey there, <input id="userName" class="nameField" type="text" placeholder="your name" onkeydown="setName(this)">.</p>
               </form>
-              <!-- <p class="greeting text-center"></p> -->
               <p class="motivation text-center">Enter your name above and press enter to get started.</p>
+              <p class="weather text-center"></p>
+              <p class="forecast text-center"></p>
             </div>
           </div>
         </div>

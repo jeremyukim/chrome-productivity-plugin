@@ -17,6 +17,8 @@ function setName(e) {
     if(event.keyCode == 13) {
         userName = document.getElementById("userName").value;
         updateTime();
+        setInterval(updateTime, 1000);
+        setInterval(updateWeather, 1000);
     }
 }
 
@@ -51,30 +53,38 @@ function updateTime(){
   } else if (time < 16) {
     //Change greeting to: Good afternoon, <name>.
     $(".greeting").text("Good afternoon, " + userName);
-    $(".motivation").text("Hmmm what should you eat for lunch?");
+    $(".motivation").text("You better be out of bed by now.");
   } else if (time < 23) {
     //Change greeting to: Good evening, <name>.
     $(".greeting").text("Good evening, " + userName);
+    $(".motivation").text("It's not too late to cross something off the to-do list!");
   }
 }
 
-    // Weather.getCurrent( "Toronto", function( current ) {
-    //     $( "#current" ).html( "Temperature: " +
-    //         Weather.kelvinToFahrenheit( current.temperature() ) + "&deg;F or " +
-    //         Weather.kelvinToCelsius( current.temperature() ) + "&deg;C" +
-    //         "<br />Current Conditions: " + current.conditions() );
-    // });
-    //
-    // Weather.getForecast( "Toronto", function ( forecast ) {
-    //     $( "#forecast" ).html( "High: " +
-    //         Weather.kelvinToFahrenheit( forecast.high() ) + "&deg;F or " +
-    //         Weather.kelvinToCelsius( forecast.high() ) + "&deg;C<br />Low: " +
-    //         Weather.kelvinToFahrenheit( forecast.low() ) + "&deg;F or " +
-    //         Weather.kelvinToCelsius( forecast.low() ) + "&deg;C" );
-    // });
+function updateWeather (){
+  Weather.getCurrent( "Waterloo", function( current ) {
+      $( ".weather" ).html(Math.round(Weather.kelvinToCelsius( current.temperature() )) + "&deg; " +
+          "with " + current.conditions() );
+  });
+
+  Weather.getForecast( "Waterloo", function ( forecast ) {
+      $( ".forecast" ).html( "H: " +
+          Math.round(Weather.kelvinToCelsius( forecast.high() )) + "&deg;<br/>L: " +
+          Math.round(Weather.kelvinToCelsius( forecast.low() )) + "&deg;" );
+  });
+  // Weather.getCurrent("Waterloo", function(current) {
+  //   var current = Weather.kelvinToCelsius(current.temperature());
+  //   var conditions = "Current Conditions: " + current.conditions();
+  // });
+  //
+  // Weather.getForecast( "Waterloo", function (forecast) {
+  //     var high = Weather.kelvinToCelsius(forecast.high());
+  //     var low = Weather.kelvinToCelsius(forecast.low());
+  // });
+  // $(".weather").text("Current: " + current + " &nbsp;&nbsp;&nbsp; High: " + high + " &nbsp;&nbsp;&nbsp; Low: " + low)
+}
+
 
 $(document).ready(function(){
-  if(userName!=""){
-    setInterval(updateTime, 1000);
-  }
+
 });

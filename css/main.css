@@ -19,19 +19,23 @@ textarea:focus, input:focus{
 }
 
 ::-webkit-input-placeholder {
-   color: #ccc;
+   color: white;
+   opacity: 0.5;
 }
 
 :-moz-placeholder { /* Firefox 18- */
-   color: #ccc;
+  color: white;
+  opacity: 0.5;
 }
 
 ::-moz-placeholder {  /* Firefox 19+ */
-   color: #ccc;
+  color: white;
+  opacity: 0.5;
 }
 
 :-ms-input-placeholder {
-   color: #ccc;  
+  color: white;
+  opacity: 0.5;
 }
 
 #photoCredit {
@@ -86,6 +90,24 @@ input[type="text"] {
   font-size: 1.5em;
   color: white;
   margin-bottom: -30px;
+}
+
+.weather {
+  padding-top: 40px;
+  position: fixed;
+  font-family: "Open Sans";
+  font-weight: 300;
+  font-size: 1.5em;
+  color: white;
+}
+
+.forecast {
+  position: fixed;
+  padding-top: 70px;
+  font-family: "Open Sans";
+  font-weight: 300;
+  font-size: 1.5em;
+  color: white;
 }
 
 .borderRight {
