@@ -68,8 +68,8 @@ function updateWeather (){
   });
 
   Weather.getForecast( "Waterloo", function ( forecast ) {
-      $( ".forecast" ).html( "H: " +
-          Math.round(Weather.kelvinToCelsius( forecast.high() )) + "&deg;<br/>L: " +
+      $( ".forecast" ).html( "High " +
+          Math.round(Weather.kelvinToCelsius( forecast.high() )) + "&deg; &nbsp; &nbsp;| &nbsp; &nbsp; Low " +
           Math.round(Weather.kelvinToCelsius( forecast.low() )) + "&deg;" );
   });
   // Weather.getCurrent("Waterloo", function(current) {
