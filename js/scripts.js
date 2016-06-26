@@ -22,6 +22,10 @@ function updateTime(){
   } else if (hour > 12) {
     hour = hour - 12;
   }
+
+  if (minute < 10) {
+    minute = "0" + minute;
+  }
   $(".currentHour").text(hour + ":" + minute);
 }
 
