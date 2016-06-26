@@ -10,6 +10,19 @@
   background-size: cover;
 }
 
+a {
+  color: white;
+}
+
+#photoCredit {
+  font-size: 1em;
+  position: relative;
+  top: 95%;
+  color: white;
+  font-family: "Open Sans";
+  font-weight: 300;
+}
+
 .vertCenter {
   display: flex;
   flex-direction: column;
@@ -23,7 +36,9 @@
   font-weight: 600;
   font-size: 10em;
   color: white;
-  margin-bottom: -20px;
+  margin-top: -70px;
+  margin-bottom: -15px;
+  padding-top: 0;
   padding-bottom: 0;
 }
 
@@ -32,7 +47,17 @@
   font-weight: 600;
   font-size: 3.5em;
   color: white;
-  padding-bottom: 0;
+  margin-bottom: 10px;
+}
+
+.nameField {
+  border: 0px solid white;
+  border-bottom-width: 4px;
+  background-color: transparent;
+}
+
+input[type="text"] {
+    width: 300px;
 }
 
 .motivation {
@@ -40,4 +65,10 @@
   font-weight: 300;
   font-size: 1.5em;
   color: white;
+  margin-bottom: -30px;
+}
+
+.borderRight {
+  display: table;
+  border-right: 3px solid white;
 }

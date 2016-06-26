@@ -1,6 +1,6 @@
 <html lang="en">
   <head>
-    <title>Weather</title>
+    <title>Focus</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/animate.css" rel="stylesheet">
@@ -13,16 +13,21 @@
   </head>
   <body>
     <div id="background">
-      <!-- <p id="photoCredit" class="text-center whiteText extraSpacing openSans">Original image by <a class="limeText" target="_blank" href="https://www.flickr.com/photos/alexindigo/">Alex Indigo</a>. Licensed under <a class="limeText" target="_blank" href="https://creativecommons.org/licenses/by/2.0/">Creative Commons 2.0</a></p> -->
+      <p id="photoCredit" class="text-center">Photo by <a target="_blank" href="http://lukaesenko.com/">Luka Esenko</a></p>
     </div>
     <div class="container">
       <div class="row">
         <div class="col-sm-12">
           <!-- Will change name to variable set by user soon! -->
           <div class="vertCenter">
-            <p class="currentHour text-center"></p>
-            <p class="greeting text-center">Good morning, Jeremy.</p>
-            <p class="motivation text-center">It's a brand new day, make it a good one!</p>
+            <div class="">
+              <p class="currentHour text-center"></p>
+              <form action="" onSubmit="return false;">
+                <p class="greeting"> Hey there, <input id="userName" class="nameField" type="text" placeholder="your name" onkeydown="setName(this)"></p>
+              </form>
+              <!-- <p class="greeting text-center"></p> -->
+              <p class="motivation text-center">Enter your name above and press enter to get started.</p>
+            </div>
           </div>
         </div>
       </div>
@@ -39,23 +44,7 @@
                 <h3 id="forecast"></h2>
             </div>
         </div>
-    </div>
-    <script>
-        Weather.getCurrent( "Toronto", function( current ) {
-            $( "#current" ).html( "Temperature: " +
-                Weather.kelvinToFahrenheit( current.temperature() ) + "&deg;F or " +
-                Weather.kelvinToCelsius( current.temperature() ) + "&deg;C" +
-                "<br />Current Conditions: " + current.conditions() );
-        });
-
-        Weather.getForecast( "Toronto", function ( forecast ) {
-            $( "#forecast" ).html( "High: " +
-                Weather.kelvinToFahrenheit( forecast.high() ) + "&deg;F or " +
-                Weather.kelvinToCelsius( forecast.high() ) + "&deg;C<br />Low: " +
-                Weather.kelvinToFahrenheit( forecast.low() ) + "&deg;F or " +
-                Weather.kelvinToCelsius( forecast.low() ) + "&deg;C" );
-        });
-    </script> -->
+    </div> -->
     <script src="js/scripts.js"></script>
   </body>
 </html>
