@@ -46,7 +46,7 @@ function updateTime(){
     $(".motivation").text("It's getting late. Try to get some rest!");
   } else if (time < 12) {
     //Change greeting to: Good morning, <name>. It's a brand new day, make it a great one! :)
-    $(".greeting").text("Good morning, _______.");
+    $(".greeting").text("Good morning, " + userName);
     $(".motivation").text("It's a brand new day, make it a great one!");
   } else if (time < 16) {
     //Change greeting to: Good afternoon, <name>.
@@ -54,7 +54,7 @@ function updateTime(){
     $(".motivation").text("Hmmm what should you eat for lunch?");
   } else if (time < 23) {
     //Change greeting to: Good evening, <name>.
-    $(".greeting").text("Good evening, _______.");
+    $(".greeting").text("Good evening, " + userName);
   }
 }
 
