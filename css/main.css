@@ -1,0 +1,23 @@
+#background {
+  position: fixed;
+  background: url('../img/torontosunset.png') no-repeat center center;
+  width: 100vw;
+  height: 100vh;
+  z-index: 0;
+  background-size: 100% 100%;
+}
+
+.currentHour {
+  font-family: "Open Sans";
+  font-weight: 600;
+  font-size: 10em;
+  color: white;
+}
+
+.greeting {
+  font-family: "Open Sans";
+  font-weight: 600;
+  font-size: 4em;
+  color: white;
+
+}
