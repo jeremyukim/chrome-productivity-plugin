@@ -17,8 +17,9 @@ function setName(e) {
     if(event.keyCode == 13) {
         userName = document.getElementById("userName").value;
         updateTime();
+        updateWeather();
         setInterval(updateTime, 1000);
-        setInterval(updateWeather, 1000);
+        setInterval(updateWeather, 10000);
     }
 }
 
@@ -44,44 +45,35 @@ function updateTime(){
   $(".currentHour").text(hour + ":" + minute);
   if (time < 3 || time > 22) {
     //Change greeting to: It's getting late, <name>. Try to get some rest!
-    $(".greeting").text("Good evening, " + userName);
+    $(".greeting").text("Good evening, " + userName + ".");
     $(".motivation").text("It's getting late. Try to get some rest!");
   } else if (time < 12) {
     //Change greeting to: Good morning, <name>. It's a brand new day, make it a great one! :)
-    $(".greeting").text("Good morning, " + userName);
+    $(".greeting").text("Good morning, " + userName + ".");
     $(".motivation").text("It's a brand new day, make it a great one!");
   } else if (time < 16) {
     //Change greeting to: Good afternoon, <name>.
-    $(".greeting").text("Good afternoon, " + userName);
+    $(".greeting").text("Good afternoon, " + userName + ".");
     $(".motivation").text("You better be out of bed by now.");
   } else if (time < 23) {
     //Change greeting to: Good evening, <name>.
-    $(".greeting").text("Good evening, " + userName);
+    $(".greeting").text("Good evening, " + userName + ".");
     $(".motivation").text("It's not too late to cross something off the to-do list!");
   }
 }
 
 function updateWeather (){
-  Weather.getCurrent( "Waterloo", function( current ) {
+  Weather.getCurrent( "Toronto", function( current ) {
       $( ".weather" ).html(Math.round(Weather.kelvinToCelsius( current.temperature() )) + "&deg; " +
           "with " + current.conditions() );
+      console.log(current.temperature + " with " + current.conditions());
   });
 
-  Weather.getForecast( "Waterloo", function ( forecast ) {
+  Weather.getForecast( "Toronto", function ( forecast ) {
       $( ".forecast" ).html( "High " +
           Math.round(Weather.kelvinToCelsius( forecast.high() )) + "&deg; &nbsp; &nbsp;| &nbsp; &nbsp; Low " +
           Math.round(Weather.kelvinToCelsius( forecast.low() )) + "&deg;" );
   });
-  // Weather.getCurrent("Waterloo", function(current) {
-  //   var current = Weather.kelvinToCelsius(current.temperature());
-  //   var conditions = "Current Conditions: " + current.conditions();
-  // });
-  //
-  // Weather.getForecast( "Waterloo", function (forecast) {
-  //     var high = Weather.kelvinToCelsius(forecast.high());
-  //     var low = Weather.kelvinToCelsius(forecast.low());
-  // });
-  // $(".weather").text("Current: " + current + " &nbsp;&nbsp;&nbsp; High: " + high + " &nbsp;&nbsp;&nbsp; Low: " + low)
 }
 
 
